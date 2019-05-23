@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+          <script type="text/javascript" src="httpGet.js"></script>       
+           <script >
+             var url="http://kelpa-api.herokuapp.com/login"
+             var params = {
+               nick : "Aa",
+               pass : "aaaaaa",
+               remember : true
+             }
+            
+             console.log('Itworks');
+ 
+           </script>     
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+           <script>
+           
+           $.ajax({
+            type: 'post',
+            url: url,
+            Accept: 'application/json',
+            contentType: "application/json;",
+            beforeSend: function(request) {
+            request.setRequestHeader("Set-Cookie", "session");
+            },
+            data: JSON.stringify(params),
+            
+          
+            success: function (data) {
+               console.log(data);
+               
+            }
+
+
+            
+        });
+        
+
+
+            
+           
+          </script> 
+            </head>
+            <body>
+                
+            </body>
+</html>
